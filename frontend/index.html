@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/all.min.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <style>
+        h5 {
+            margin-bottom: 0;
+        }
+
+        .barra-tarefas {
+            justify-content: space-around;
+        }
+        
+        footer {
+            width: 100vw;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+    <title>LISTA DE NUMEROS</title>
+</head>
+<body>
+
+    <div class="container mt-3">
+
+        <!-- CABEÇALHO -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="d-flex justify-content-start">
+                    <img src="assets/img/favicon.png" alt="logo" class="img-fluid me-3" width="40px">
+                    <h1>Lista de números</h1>
+                </div>
+            </div>
+            <div class="col text-end p-0">
+                <div class="d-flex justify-content-end">
+                    <!-- <select id="select-filter" class="form-select me-3 w-50"> -->
+                    <select id="select-filter" class="form-select w-50 rounded-start-4 rounded-end-0">
+                        <option value="filtro 01">filtro 01</option>
+                        <option value="filtro 02">filtro 02</option>
+                    </select>
+                    <a href="new_number.html" target="_blank" class="btn btn-primary rounded-start-0 rounded-end-4"><i class="fa-solid fa-plus me-2"></i>Novo Número</a>
+                </div>
+            </div>
+            <hr class="my-3">
+        </div>
+
+        <!-- ASPECTO VISUAL DE UMA TAREFA -->
+         <div class="row mb-3">
+            <div class="col-12 border border-primary rounded p-2 shadow-sm">
+                <div class="row barra-tarefas">
+                    <div class="col-8 d-flex align-items-center">
+                        <h5><i class="fa-brands fa-whatsapp me-2 text-success"></i></h5><h5>11 98488-4568</h5>
+                    </div>
+                    <div class="col-3 text-center">
+                        <select id="task_status" class="form-select py-1">
+                            <option value="new">Novo</option>
+                            <option value="in_progress">Em progresso</option>
+                            <option value="canceled">Cancelado</option>
+                            <option value="done">Concluído</option>
+                        </select>
+                    </div>
+                    <div class="col-1 text-danger d-flex align-items-center justify-content-center">
+                        <i class="fa-regular fa-pen-to-square  text-success me-4"></i>
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         <!-- TOTAL NÚMEROS -->
+          <div class="row mt-4" id="total_tasks">
+            <div class="col">
+                <h4>Números: <span class="text-success">4</span></h4>
+            </div>
+          </div>
+          
+        <!-- SEM TAREFAS -->
+        <div class="row" id="no-tasks">
+            <div class="col text-center">
+                <span class="opacity-50">Não existem números para apresentar</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- FOOTER -->
+     <footer class="mt-3">
+        <div class="col text-center">
+            <hr>
+            <p>Lista de Números &copy; 2024</p>
+        </div>
+     </footer>
+    
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!-- 
+
+FERRAMENTAS USADAS:
+https://bootswatch.com/slate/
+https://fontawesome.com/search
+
+-->
+
+<!-- 
+Glosario Bootstrap
+d-flex               display: flex
+d-none               display: none
+justify-content-end  justify-content: end
+mt-3                 margin-top: 3
+mb-5                 margin-bottom: 5
+
+
+-->
