@@ -11,6 +11,20 @@
             margin-bottom: 0;
         }
 
+        .filtro {
+            background-color: #777;
+            transition: .5s;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .filtro:hover {
+            background-color: #ccc;
+        }
+        
+        .filtro:focus {
+            border-radius: 10px 0 0 0;
+        }
+
         .barra-tarefas {
             justify-content: space-around;
         }
@@ -37,8 +51,7 @@
             </div>
             <div class="col text-end p-0">
                 <div class="d-flex justify-content-end">
-                    <!-- <select id="select-filter" class="form-select me-3 w-50"> -->
-                    <select id="select-filter" class="form-select w-50 rounded-start-4 rounded-end-0">
+                    <select id="select-filter" class="form-select w-50 filtro"> <!--  rounded-start-4 rounded-end-0 -->>
                         <option value="filtro 01">filtro 01</option>
                         <option value="filtro 02">filtro 02</option>
                     </select>
@@ -56,7 +69,7 @@
                         <h5><i class="fa-brands fa-whatsapp me-2 text-success"></i></h5><h5>11 98488-4568</h5>
                     </div>
                     <div class="col-3 text-center">
-                        <select id="task_status" class="form-select py-1">
+                        <select id="task_status" class="form-select py-1 filtro">
                             <option value="new">Novo</option>
                             <option value="in_progress">Em progresso</option>
                             <option value="canceled">Cancelado</option>
