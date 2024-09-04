@@ -1,0 +1,28 @@
+
+h5 {
+    margin-bottom: 0;
+}
+
+.filtro {
+    background-color: #777;
+    transition: .5s;
+    border-radius: 10px 0 0 10px;
+}
+
+.filtro:hover {
+    background-color: #ccc;
+}
+
+.filtro:focus {
+    border-radius: 10px 0 0 0;
+}
+
+.barra-tarefas {
+    justify-content: space-around;
+}
+
+footer {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}

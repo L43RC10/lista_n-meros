@@ -6,35 +6,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fontawesome/all.min.css">
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <style>
-        h5 {
-            margin-bottom: 0;
-        }
-
-        .filtro {
-            background-color: #777;
-            transition: .5s;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .filtro:hover {
-            background-color: #ccc;
-        }
-        
-        .filtro:focus {
-            border-radius: 10px 0 0 0;
-        }
-
-        .barra-tarefas {
-            justify-content: space-around;
-        }
-        
-        footer {
-            width: 100vw;
-            position: absolute;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>LISTA DE NUMEROS</title>
 </head>
 <body>
@@ -52,8 +24,20 @@
             <hr class="my-3">
         </div>
 
-        <!-- espaço para registrar um novo numero -->
-         
+        <!-- espaço para editar um numero -->
+        <div class="row">
+            <div class="col">
+                <h3>Editar Número</h3>
+                <div class="mb-3">
+                    <input type="text" id="numero" class="form-control" maxlength="15" placeholder="Digite o número">
+                </div>
+                
+                <div class="text-center">
+                    <a href="index.html" class="btn btn-danger">Cancelar</a>
+                    <button id="btn_guardar" class="btn btn-success">Atualizar</button>
+                </div>
+            </div>
+         </div>
         
     </div>
 
