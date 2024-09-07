@@ -6,12 +6,12 @@ const cors = require('cors');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: '', //12345678b / caso peça a senha
+    password: '12345678b', //12345678b / caso peça a senha
     database: 'db_numeros'
 });
 
 const app = new express();
-app.listen(3000,  () => {
+app.listen(3000, () => {
     console.log('Servidor iniciado');
 });
 
@@ -22,7 +22,7 @@ app.use(cors());
 app.get("/", (req, res) => {
     // res.send('Hello World!');
     connection.query("SELECT COUNT(*) users FROM users", (err, results) => {
-        if(err){
+        if (err) {
             res.send('MySQL connection error.');
         }
 
@@ -34,10 +34,20 @@ app.get("/", (req, res) => {
 // ======================================
 app.get("/user/:id", (req, res) => {
     connection.query("SELECT id, username, created_at FROM users WHERE id = ?", [req.params.id], (err, results) => {
-        if(err){
+        if (err) {
             res.send('MySQL connection error.');
         }
 
         res.json(results);
     });
-})
+});
+
+// ======================================
+app.get("/user/:id/numeros", (req, res) => {
+    connection.query("SELECT * FROM numeros WHERE id = ?", [req.params.id], (err, results) => {
+        if (err) {
+            res.send('MySQL connection error.');
+        }
+        res.json(results);
+    });
+});

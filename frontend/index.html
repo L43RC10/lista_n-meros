@@ -31,42 +31,44 @@
                 </div>
             </div>
             <hr class="my-3">
-            <p id="username" class="m-0 p-0">[username</p>
+            <h4 class="m-0 p-0"><i class="fa-solid fa-user-tie me-2 text-success"></i><span id="username"></span></h4>
             <hr class="my-3">
         </div>
 
-        <!-- ASPECTO VISUAL DE UMA TAREFA -->
-         <div class="row mb-3">
-            <div class="col-12 border border-primary rounded p-2 shadow-sm">
-                <div class="row barra-tarefas">
-                    <div class="col-8 d-flex align-items-center">
-                        <h5><i class="fa-brands fa-whatsapp ms-2 me-2 text-success"></i></h5><h5>11 98488-4568</h5>
-                    </div>
-                    <div class="col-3 text-center">
-                        <select id="task_status" class="form-select py-1 filtro">
-                            <option value="new">Novo</option>
-                            <option value="in_progress">Em progresso</option>
-                            <option value="canceled">Cancelado</option>
-                            <option value="done">Concluído</option>
-                        </select>
-                    </div>
-                    <div class="col-1 text-danger d-flex align-items-center justify-content-center">
-                        <a href="editar_numero.html"><i class="fa-regular fa-pen-to-square  text-success me-4"></i></a>
-                        <i class="fa-regular fa-trash-can"></i>
-                    </div>
+        <!-- ASPECTO VISUAL DE UM NUMERO -->
+        <div id="numeros_container" class="">
+            <div class="row mb-3">
+               <div class="col-12 border border-primary rounded p-2 shadow-sm">
+                   <div class="row barra-tarefas">
+                       <div class="col-8 d-flex align-items-center">
+                           <h5><i class="fa-brands fa-whatsapp ms-2 me-2 text-success"></i></h5><h5>11 98488-4568</h5>
+                       </div>
+                       <div class="col-3 text-center">
+                           <select id="task_status" class="form-select py-1 filtro">
+                               <option value="new">Novo</option>
+                               <option value="in_progress">Em progresso</option>
+                               <option value="canceled">Cancelado</option>
+                               <option value="done">Concluído</option>
+                           </select>
+                       </div>
+                       <div class="col-1 text-danger d-flex align-items-center justify-content-center">
+                           <a href="editar_numero.html"><i class="fa-regular fa-pen-to-square  text-success me-4"></i></a>
+                           <i class="fa-regular fa-trash-can"></i>
+                       </div>
+                   </div>
+               </div>
+            </div>
+
+            <!-- TOTAL NÚMEROS -->
+            <div class="row mt-4">
+                <div class="col">
+                    <h4>Números: <span id="total_numeros" class="text-success">4</span></h4>
                 </div>
             </div>
-         </div>
-
-         <!-- TOTAL NÚMEROS -->
-          <div class="row mt-4" id="total_tasks">
-            <div class="col">
-                <h4>Números: <span class="text-success">4</span></h4>
-            </div>
-          </div>
+        </div>
           
         <!-- SEM TAREFAS -->
-        <div class="row" id="no-tasks">
+        <div class="row d-none" id="sem_numeros">
             <div class="col text-center">
                 <span class="opacity-50">Não existem números para apresentar</span>
             </div>
