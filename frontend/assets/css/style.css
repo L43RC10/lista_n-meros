@@ -21,6 +21,10 @@ h5 {
     justify-content: space-around;
 }
 
+.edit_link {
+    cursor: pointer;
+}
+
 footer {
     width: 100vw;
     position: absolute;
