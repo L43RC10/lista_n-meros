@@ -49,7 +49,29 @@ function get_user_numero(id){
 
             document.querySelector('#numeros_container').innerHTML = null; // ''(vazio) ou null é a mesma coisa
 
+            let colors = [
+                {
+                    num_status: 'novo',
+                    selected_bg_color: 'bg-white'
+                },
+                {
+                    num_status: 'em_progresso',
+                    selected_bg_color: 'bg-info'
+                },
+                {
+                    num_status: 'cancelado',
+                    selected_bg_color: 'bg-danger'
+                },
+                {
+                    num_status: 'concluido',
+                    selected_bg_color: 'bg-success'
+                },
+            ]
+
             numeros.forEach(numero => {
+
+                let color = colors.find(item => item.num_status == numero.numero_status);
+                console.log(color);
                 
                 let html = `
                     <div class="col-12 border border-primary rounded p-2 shadow-sm">
@@ -58,7 +80,7 @@ function get_user_numero(id){
                                 <h5><i class="fa-brands fa-whatsapp ms-2 me-2 text-success"></i></h5><h5>${numero.numero}</h5>
                             </div>
                             <div class="col-3 text-center">
-                                <select id="task_status" class="form-select py-1 filtro">
+                                <select id="task_status" class="form-select py-1 filtro ${color.selected_bg_color}">
                                     <option value="novo" ${numero.numero_status == 'novo' ? 'selected' : ''}>Novo</option>
                                     <option value="em_progresso" ${numero.numero_status == 'em_progresso' ? 'selected' : ''}>Em progresso</option>
                                     <option value="cancelado" ${numero.numero_status == 'cancelado' ? 'selected' : ''}>Cancelado</option>
@@ -74,7 +96,7 @@ function get_user_numero(id){
                     </div>`;
                 
                 let novo_numero = document.createElement('div');
-                novo_numero.classList.add('row', 'mb-3');
+                novo_numero.classList.add('row', 'mb-1');
                 novo_numero.innerHTML = html;
 
                 document.querySelector('#numeros_container').appendChild(novo_numero);
