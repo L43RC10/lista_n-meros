@@ -80,16 +80,16 @@ function get_user_numero(id){
                                 <h5><i class="fa-brands fa-whatsapp ms-2 me-2 text-success"></i></h5><h5>${numero.numero}</h5>
                             </div>
                             <div class="col-3 text-center">
-                                <select id="task_status" class="form-select py-1 filtro ${color.selected_bg_color}">
+                                <select id="task_status_${numero.id}" onchange="change_numero_status(${numero.id})" class="form-select py-1 filtro ${color.selected_bg_color}">
                                     <option value="novo" ${numero.numero_status == 'novo' ? 'selected' : ''}>Novo</option>
                                     <option value="em_progresso" ${numero.numero_status == 'em_progresso' ? 'selected' : ''}>Em progresso</option>
                                     <option value="cancelado" ${numero.numero_status == 'cancelado' ? 'selected' : ''}>Cancelado</option>
                                     <option value="concluido" ${numero.numero_status == 'concluido' ? 'selected' : ''}>Concluído</option>
                                 </select>
                             </div>
-                            <div class="col-1 text-danger d-flex align-items-center justify-content-center">
-                                <i class="fa-regular fa-pen-to-square text-success me-4 edit_link" data-id-numero="${numero.id}"></i>
-                                <i class="fa-regular fa-trash-can"></i>
+                            <div class="col-1 d-flex align-items-center justify-content-center">
+                                <i class="fa-regular fa-pen-to-square text-success me-4 edit_link" onclick="edit_numero(${numero.id})"></i>
+                                <i class="fa-regular fa-trash-can text-danger edit_link" onclick="delete_numero(${numero.id})"></i>
                             </div>
                         </div>
                     </div>
@@ -109,4 +109,17 @@ function get_user_numero(id){
 
         }
     })
+}
+
+function edit_numero(id_numero){
+    console.log(`editar ${id_numero}`);
+}
+
+function delete_numero(id_numero){
+    console.log(`deletar ${id_numero}`);
+}
+
+function change_numero_status(id_numero){
+    let value = document.querySelector(`#task_status_${id_numero}`).value;
+    console.log(`Número Id: ${id_numero} teve o status alterado para ${value}!`);
 }
