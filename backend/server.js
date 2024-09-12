@@ -16,6 +16,7 @@ app.listen(3000, () => {
 });
 
 app.use(cors());
+app.use(express.json());
 
 // rotas
 // ======================================
@@ -50,4 +51,12 @@ app.get("/user/:id/numeros", (req, res) => {
         }
         res.json(results);
     });
+});
+
+// ======================================
+app.post("/user/:id/numeros/update_status/", (req, res) => {
+    console.log(req.params.id);
+    console.log(req.body.id_numero);
+    console.log(req.body.status);
+    res.send('FINALIZADO');
 });

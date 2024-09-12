@@ -1,18 +1,18 @@
 // javascript do index.html
 
-let id = 1
+let id_user = 1;
 
 window.onload = () => {
 
-    get_username(id);
-    get_user_numero(id);
+    get_username(id_user);
+    get_user_numero(id_user);
 
 }
 
 // ======================================
-function get_username(id){
+function get_username(id_user){
 
-    fetch(`http://127.0.0.1:3000/user/${id}`)
+    fetch(`http://127.0.0.1:3000/user/${id_user}`)
     .then(response => {
         if(response.status === 200){
             return response.json();
@@ -31,9 +31,9 @@ function get_username(id){
 }
 
 // ======================================
-function get_user_numero(id){
+function get_user_numero(id_user){
 
-    fetch(`http://127.0.0.1:3000/user/${id}/numeros`)
+    fetch(`http://127.0.0.1:3000/user/${id_user}/numeros`)
     .then(response => {
         if(response.status === 200){
             return response.json();
@@ -111,15 +111,29 @@ function get_user_numero(id){
     })
 }
 
+// ======================================
 function edit_numero(id_numero){
     console.log(`editar ${id_numero}`);
 }
 
+// ======================================
 function delete_numero(id_numero){
     console.log(`deletar ${id_numero}`);
 }
 
+// ======================================
 function change_numero_status(id_numero){
-    let value = document.querySelector(`#task_status_${id_numero}`).value;
-    console.log(`Número Id: ${id_numero} teve o status alterado para ${value}!`);
+    let status = document.querySelector(`#task_status_${id_numero}`).value;
+    // console.log(`Número Id: ${id_numero} teve o status alterado para ${value}!`);
+
+    // aqui iremos fazer o request(requisição)
+    fetch(`http://127.0.0.1:3000/user/${id_user}/numeros/update_status`, {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify({id_user, id_numero, status})
+    })
+    // aqui teremos a resposta
+    .then(response => {
+        console.log(response);
+    })
 }
